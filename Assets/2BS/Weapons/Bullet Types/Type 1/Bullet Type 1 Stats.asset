@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5cd7cc47b6faa44a0640d5dad8f485, type: 3}
+  m_Name: Bullet Type 1 Stats
+  m_EditorClassIdentifier: 
+  damage: 1
+  speed: 15
+  explosionParticleSystem: {fileID: 1567468446997150, guid: 9d7a52a1056c4e04da97794becfbec7c,
+    type: 2}
