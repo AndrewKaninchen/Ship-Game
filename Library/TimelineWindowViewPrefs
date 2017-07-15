@@ -12,24 +12,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Keys:
-  - {fileID: 11400000, guid: 4cf15502e815f5243be916cf8e8ac24a, type: 2}
-  - {fileID: 11400000, guid: 8b7120d74a704c74486018ca3f88f14e, type: 2}
+  - {fileID: 11400000, guid: d65ec85b6fa6a16449288855c3a2506d, type: 2}
   m_Vals:
   - timeInFrames: 1
     timeAreaShownRange: {x: -0.09174312, y: 9.908257}
     m_Keys:
-    - {fileID: 114335360763546842, guid: 4cf15502e815f5243be916cf8e8ac24a, type: 2}
-    - {fileID: 114539141755809414, guid: 4cf15502e815f5243be916cf8e8ac24a, type: 2}
-    m_Vals:
-    - collapsed: 0
-      showInlineCurves: 0
-    - collapsed: 0
-      showInlineCurves: 0
-  - timeInFrames: 1
-    timeAreaShownRange: {x: -0.0912354, y: 9.853424}
-    m_Keys:
-    - {fileID: 114175243533589730, guid: 8b7120d74a704c74486018ca3f88f14e, type: 2}
-    - {fileID: 114251145373777768, guid: 8b7120d74a704c74486018ca3f88f14e, type: 2}
+    - {fileID: 114647729159785588, guid: d65ec85b6fa6a16449288855c3a2506d, type: 2}
+    - {fileID: 114728955318168834, guid: d65ec85b6fa6a16449288855c3a2506d, type: 2}
     m_Vals:
     - collapsed: 0
       showInlineCurves: 0

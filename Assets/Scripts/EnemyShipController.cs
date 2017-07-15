@@ -13,7 +13,9 @@ public class EnemyShipController : ShipController
 	[SerializeField]
 	private Weapon weapon;
 
-	public bool isShooting = false;
+	private bool isShooting = false;
+
+	public float shooting = 0f;
 
 	protected override void Start()
 	{
@@ -26,10 +28,9 @@ public class EnemyShipController : ShipController
 
 	private void Update()
 	{
-		if (isShooting)
+		if (shooting > 0)
 		{
-			weapon.Shoot();
-			//isShooting = false;
+			weapon.Shoot();			
 		}
 	}
 

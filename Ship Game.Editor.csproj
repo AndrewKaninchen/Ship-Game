@@ -138,6 +138,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DefaultPlayables\Editor\TimelinePlayableWizard.cs" />
+    <Compile Include="Assets\DefaultPlayables\LightControl\Editor\LightControlDrawer.cs" />
+    <Compile Include="Assets\DefaultPlayables\ScreenFader\Editor\ScreenFaderDrawer.cs" />
+    <Compile Include="Assets\DefaultPlayables\TextSwitcher\Editor\TextSwitcherDrawer.cs" />
+    <Compile Include="Assets\DefaultPlayables\TimeDilation\Editor\TimeDilationDrawer.cs" />
+    <Compile Include="Assets\DefaultPlayables\TransformTween\Editor\TransformTweenDrawer.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />
