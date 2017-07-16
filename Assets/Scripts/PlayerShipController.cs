@@ -25,10 +25,13 @@ public class PlayerShipController : ShipController {
 		dashDuration,
 		dashDoublePressSpeed;
 	#endregion
-	
+
 	#region Variables
+	private Vector2 inputDir;
+
 	private float
-		inputHorizontal;
+		inputHorizontal,
+		inputVertical;
 	private bool
 		waitingForDash = false,
 		dashing = false,
@@ -50,47 +53,48 @@ public class PlayerShipController : ShipController {
 	private void Update ()
 	{
 		inputHorizontal = Input.GetAxis("Horizontal");
+		inputVertical = Input.GetAxis("Vertical");
+
+		inputDir = Vector2.ClampMagnitude(new Vector2(inputHorizontal, inputVertical), 1f);
 		shooting = false;
 
-		if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+		if (Input.GetButton("Fire1"))
 		{
 			weapon.Shoot();
 			shooting = true;
-			rb.velocity = Vector2.zero;
+			//rb.velocity = Vector2.zero;
 		}
 
-		else
+		if (!dashing && !waitingForDash)
 		{
-			if (!dashing && !waitingForDash)
+			if (Input.GetKeyDown(KeyCode.A))
 			{
-				if (Input.GetKeyDown(KeyCode.A))
-				{
-					waitingForDashKeyCode = KeyCode.A;
-					waitingForDashCoroutine = StartCoroutine(WaitForDash(waitingForDashKeyCode));
-				}
-				else if (Input.GetKeyDown(KeyCode.D))
-				{
-					waitingForDashKeyCode = KeyCode.D;
-					waitingForDashCoroutine = StartCoroutine(WaitForDash(waitingForDashKeyCode));
-				}
+				waitingForDashKeyCode = KeyCode.A;
+				waitingForDashCoroutine = StartCoroutine(WaitForDash(waitingForDashKeyCode));
 			}
-
-			if (waitingForDash)
+			else if (Input.GetKeyDown(KeyCode.D))
 			{
-				if (Input.GetKeyDown(waitingForDashKeyCode))
-				{
-					waitingForDash = false;
-					StopCoroutine(waitingForDashCoroutine);
-					StartCoroutine(Dash(waitingForDashKeyCode == KeyCode.A ? Vector2.left : Vector2.right));
-				}
+				waitingForDashKeyCode = KeyCode.D;
+				waitingForDashCoroutine = StartCoroutine(WaitForDash(waitingForDashKeyCode));
 			}
 		}
+
+		if (waitingForDash)
+		{
+			if (Input.GetKeyDown(waitingForDashKeyCode))
+			{
+				waitingForDash = false;
+				StopCoroutine(waitingForDashCoroutine);
+				StartCoroutine(Dash(waitingForDashKeyCode == KeyCode.A ? Vector2.left : Vector2.right));
+			}
+		}
+		
 	}
 
 	private void FixedUpdate()
 	{
-		if(!dashing && !shooting)
-			rb.velocity = Vector2.right * inputHorizontal * moveSpeed;
+		if(!dashing)
+			rb.velocity = inputDir * moveSpeed;
 	}
 
 	private IEnumerator WaitForDash(KeyCode code)

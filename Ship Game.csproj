@@ -90,34 +90,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DefaultPlayables\LightControl\LightControlBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\LightControl\LightControlClip.cs" />
-    <Compile Include="Assets\DefaultPlayables\LightControl\LightControlMixerBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\LightControl\LightControlTrack.cs" />
-    <Compile Include="Assets\DefaultPlayables\NavMeshAgentControl\NavMeshAgentControlBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\NavMeshAgentControl\NavMeshAgentControlClip.cs" />
-    <Compile Include="Assets\DefaultPlayables\NavMeshAgentControl\NavMeshAgentControlMixerBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\NavMeshAgentControl\NavMeshAgentControlTrack.cs" />
-    <Compile Include="Assets\DefaultPlayables\ScreenFader\ScreenFaderBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\ScreenFader\ScreenFaderClip.cs" />
-    <Compile Include="Assets\DefaultPlayables\ScreenFader\ScreenFaderMixerBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\ScreenFader\ScreenFaderTrack.cs" />
-    <Compile Include="Assets\DefaultPlayables\TextSwitcher\TextSwitcherBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\TextSwitcher\TextSwitcherClip.cs" />
-    <Compile Include="Assets\DefaultPlayables\TextSwitcher\TextSwitcherMixerBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\TextSwitcher\TextSwitcherTrack.cs" />
-    <Compile Include="Assets\DefaultPlayables\TimeDilation\TimeDilationBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\TimeDilation\TimeDilationClip.cs" />
-    <Compile Include="Assets\DefaultPlayables\TimeDilation\TimeDilationMixerBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\TimeDilation\TimeDilationTrack.cs" />
-    <Compile Include="Assets\DefaultPlayables\TransformTween\TransformTweenBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\TransformTween\TransformTweenClip.cs" />
-    <Compile Include="Assets\DefaultPlayables\TransformTween\TransformTweenMixerBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\TransformTween\TransformTweenTrack.cs" />
-    <Compile Include="Assets\DefaultPlayables\Video\VideoPlayableBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\Video\VideoSchedulerPlayableBehaviour.cs" />
-    <Compile Include="Assets\DefaultPlayables\Video\VideoScriptPlayableAsset.cs" />
-    <Compile Include="Assets\DefaultPlayables\Video\VideoScriptPlayableTrack.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -171,6 +143,14 @@
     <Compile Include="Assets\Scripts\PlayerShipController.cs" />
     <Compile Include="Assets\Scripts\ShipControlller.cs" />
     <Compile Include="Assets\Scripts\ShipStats.cs" />
+    <Compile Include="Assets\Scripts\Spline Editor\Bezier.cs" />
+    <Compile Include="Assets\Scripts\Spline Editor\BezierControlPointMode.cs" />
+    <Compile Include="Assets\Scripts\Spline Editor\BezierCurve.cs" />
+    <Compile Include="Assets\Scripts\Spline Editor\BezierSpline.cs" />
+    <Compile Include="Assets\Scripts\Spline Editor\Line.cs" />
+    <Compile Include="Assets\Scripts\Spline Editor\SplineDecorator.cs" />
+    <Compile Include="Assets\Scripts\Spline Editor\SplineWalker.cs" />
+    <Compile Include="Assets\Scripts\Spline Editor\SplineWalkerMode.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
   </ItemGroup>
   <ItemGroup>
