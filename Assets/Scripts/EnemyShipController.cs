@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyAction
+{
+	None,
+	Shoot
+}
+
+[System.Serializable]
 public class EnemyShipController : ShipController
 {
 	[SerializeField]
@@ -13,9 +20,7 @@ public class EnemyShipController : ShipController
 	[SerializeField]
 	private Weapon weapon;
 
-	private bool isShooting = false;
-
-	public float shooting = 0f;
+	public EnemyAction currentAction = EnemyAction.None;
 
 	protected override void Start()
 	{
@@ -28,16 +33,11 @@ public class EnemyShipController : ShipController
 
 	private void Update()
 	{
-		if (shooting > 0)
-		{
-			weapon.Shoot();			
-		}
+		if (currentAction == EnemyAction.Shoot)
+			weapon.Shoot();
+		currentAction = EnemyAction.None;
 	}
 
-	public void ToggleShooting()
-	{
-		isShooting = !isShooting;
-	}
 	public override void Die()
 	{
 		var e = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
