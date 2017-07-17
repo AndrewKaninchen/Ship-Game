@@ -5,7 +5,10 @@ using UnityEngine;
 public enum EnemyAction
 {
 	None,
-	Shoot
+	Spawn,
+	Destroy,
+	Shoot,
+	
 }
 
 [System.Serializable]
@@ -34,7 +37,7 @@ public class EnemyShipController : ShipController
 	private void Update()
 	{
 		if (currentAction == EnemyAction.Shoot)
-			weapon.Shoot();
+			if(weapon) weapon.Shoot();
 		currentAction = EnemyAction.None;
 	}
 

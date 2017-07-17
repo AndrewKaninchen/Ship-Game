@@ -7,9 +7,10 @@ using UnityEngine.Timeline;
 public class EnemyControlBehaviour : PlayableBehaviour
 {
 	public EnemyAction action;
+	public GameObject prefab;
 
-	public override void OnGraphStart (Playable playable)
-    {
-        
-    }
+	public override void OnGraphStart(Playable playable)
+	{
+
+	}	
 }

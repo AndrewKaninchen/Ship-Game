@@ -9,7 +9,9 @@ public class EnemyControlTrack : TrackAsset
 {
     public override Playable CreateTrackMixer(PlayableGraph graph, GameObject go, int inputCount)
     {
-		var playable = ScriptPlayable<EnemyControlMixerBehaviour>.Create(graph, inputCount);
-		return playable;
+		var mixer = ScriptPlayable<EnemyControlMixerBehaviour>.Create(graph, inputCount);
+		mixer.GetBehaviour().track = this;
+		mixer.GetBehaviour().director = go.GetComponent<PlayableDirector>();
+		return mixer;
     }
 }

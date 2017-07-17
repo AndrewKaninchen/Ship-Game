@@ -5,15 +5,15 @@ using UnityEngine.Timeline;
 
 public class EnemyControlMixerBehaviour : PlayableBehaviour
 {
-    // NOTE: This function is called at runtime and edit time.  Keep that in mind when setting the values of properties.
-    public override void ProcessFrame(Playable playable, FrameData info, object playerData)
+	public TrackAsset track;
+	public PlayableDirector director;
+	EnemyShipController trackBinding;
+	// NOTE: This function is called at runtime and edit time.  Keep that in mind when setting the values of properties.
+	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
     {
-        EnemyShipController trackBinding = playerData as EnemyShipController;
+		trackBinding = playerData as EnemyShipController;
 
-        if (!trackBinding)
-            return;
-
-        int inputCount = playable.GetInputCount ();
+		int inputCount = playable.GetInputCount ();
 
         for (int i = 0; i < inputCount; i++)
         {
@@ -23,7 +23,20 @@ public class EnemyControlMixerBehaviour : PlayableBehaviour
             
             if(inputWeight == 1)
 			{
-				trackBinding.currentAction = input.action;
+				if(input.action == EnemyAction.Spawn && trackBinding == null)
+				{
+					var s = GameObject.Instantiate(input.prefab).GetComponent<EnemyShipController>();
+					foreach (TrackAsset t in track.GetGroup().GetChildTracks())
+					{
+						director.SetGenericBinding(t, s);			
+					}
+				}
+				if(input.action == EnemyAction.Destroy)
+				{
+					if(trackBinding) GameObject.DestroyImmediate(trackBinding.gameObject);
+				}
+
+				if(trackBinding) trackBinding.currentAction = input.action;
 			}      
         }
     }
