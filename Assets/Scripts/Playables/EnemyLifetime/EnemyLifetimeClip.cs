@@ -15,8 +15,7 @@ public class EnemyLifetimeClip : PlayableAsset, ITimelineClipAsset
 
     public override Playable CreatePlayable (PlayableGraph graph, GameObject owner)
     {
-        var playable = ScriptPlayable<EnemyLifetimeBehaviour>.Create (graph, template);
-		EnemyLifetimeBehaviour clone = playable.GetBehaviour ();
+        var playable = ScriptPlayable<EnemyLifetimeBehaviour>.Create (graph, template);		
         return playable;
     }
 }

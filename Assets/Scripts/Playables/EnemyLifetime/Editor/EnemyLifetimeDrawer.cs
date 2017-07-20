@@ -6,7 +6,7 @@ public class EnemyLifetimeDrawer : PropertyDrawer
 {
     public override void OnGUI (Rect position, SerializedProperty property, GUIContent label)
     {        
-		SerializedProperty prefabProp = property.FindPropertyRelative("prefab");
+		SerializedProperty prefabProp = property.FindPropertyRelative("template");
 		EditorGUILayout.PropertyField(prefabProp);
 	}
 }

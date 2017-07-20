@@ -14,27 +14,26 @@ public class EnemyShipController : ShipController
 	[SerializeField]
 	private GameObject explosionPrefab;
 
-	private Rigidbody2D rb;
+	//private Rigidbody2D rb;
 	private Collider2D col;
 
 	[SerializeField]
-	private Weapon weapon;
+	private Weapon[] weapons;
 
 	public EnemyAction currentAction = EnemyAction.None;
 
 	protected override void Start()
 	{
 		base.Start();
-		rb = GetComponent<Rigidbody2D>();
+		//rb = GetComponent<Rigidbody2D>();
 		col = GetComponent<Collider2D>();
-
-		//weapon.gameObject.SetActive(true);
 	}
 
 	private void Update()
 	{
 		if (currentAction == EnemyAction.Shoot)
-			if(weapon) weapon.Shoot();
+			foreach (Weapon w in weapons)
+				w.Shoot();
 		currentAction = EnemyAction.None;
 	}
 

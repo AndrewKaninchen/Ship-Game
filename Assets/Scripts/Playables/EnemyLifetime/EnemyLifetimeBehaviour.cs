@@ -5,8 +5,8 @@ using UnityEngine.Timeline;
 
 [Serializable]
 public class EnemyLifetimeBehaviour : PlayableBehaviour
-{	
-	public GameObject prefab;
+{
+	public ShipStats template;
 
 	public override void OnGraphStart(Playable playable)
 	{

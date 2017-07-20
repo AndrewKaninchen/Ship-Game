@@ -18,7 +18,6 @@ MonoBehaviour:
     timeAreaShownRange: {x: -0.123709865, y: 15.265798}
     m_Keys:
     - {fileID: 114113317120491084, guid: ae525411f71d68843a167d624888de6c, type: 2}
-    - {fileID: 114247125650957584, guid: ae525411f71d68843a167d624888de6c, type: 2}
     - {fileID: 114996056651513100, guid: ae525411f71d68843a167d624888de6c, type: 2}
     - {fileID: 114148567239354952, guid: ae525411f71d68843a167d624888de6c, type: 2}
     - {fileID: 114345593794803844, guid: ae525411f71d68843a167d624888de6c, type: 2}
@@ -34,11 +33,9 @@ MonoBehaviour:
       showInlineCurves: 0
     - collapsed: 0
       showInlineCurves: 0
-    - collapsed: 1
+    - collapsed: 0
       showInlineCurves: 0
-    - collapsed: 1
+    - collapsed: 0
       showInlineCurves: 0
-    - collapsed: 1
-      showInlineCurves: 0
-    - collapsed: 1
+    - collapsed: 0
       showInlineCurves: 0
