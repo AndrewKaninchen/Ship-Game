@@ -23,19 +23,6 @@ public class EnemyControlMixerBehaviour : PlayableBehaviour
             
             if(inputWeight == 1)
 			{
-				if(input.action == EnemyAction.Spawn && trackBinding == null)
-				{
-					var s = GameObject.Instantiate(input.prefab).GetComponent<EnemyShipController>();
-					foreach (TrackAsset t in track.GetGroup().GetChildTracks())
-					{
-						director.SetGenericBinding(t, s);			
-					}
-				}
-				if(input.action == EnemyAction.Destroy)
-				{
-					if(trackBinding) GameObject.DestroyImmediate(trackBinding.gameObject);
-				}
-
 				if(trackBinding) trackBinding.currentAction = input.action;
 			}      
         }

@@ -5,10 +5,7 @@ using UnityEngine;
 public enum EnemyAction
 {
 	None,
-	Spawn,
-	Destroy,
-	Shoot,
-	
+	Shoot,	
 }
 
 [System.Serializable]

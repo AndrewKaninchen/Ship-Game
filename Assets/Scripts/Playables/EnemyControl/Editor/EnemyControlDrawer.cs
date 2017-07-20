@@ -17,7 +17,5 @@ public class EnemyControlDrawer : PropertyDrawer
 
 		//Rect singleFieldRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
         EditorGUILayout.PropertyField(actionProp);
-		if(actionProp.enumValueIndex == (int)EnemyAction.Spawn)
-			EditorGUILayout.PropertyField(prefabProp);
 	}
 }

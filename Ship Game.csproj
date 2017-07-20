@@ -144,6 +144,10 @@
     <Compile Include="Assets\Scripts\Playables\EnemyControl\EnemyControlClip.cs" />
     <Compile Include="Assets\Scripts\Playables\EnemyControl\EnemyControlMixerBehaviour.cs" />
     <Compile Include="Assets\Scripts\Playables\EnemyControl\EnemyControlTrack.cs" />
+    <Compile Include="Assets\Scripts\Playables\EnemyLifetime\EnemyLifetimeBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Playables\EnemyLifetime\EnemyLifetimeClip.cs" />
+    <Compile Include="Assets\Scripts\Playables\EnemyLifetime\EnemyLifetimeMixerBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Playables\EnemyLifetime\EnemyLifetimeTrack.cs" />
     <Compile Include="Assets\Scripts\Playables\EnemyMovement\EnemyMovementBehaviour.cs" />
     <Compile Include="Assets\Scripts\Playables\EnemyMovement\EnemyMovementClip.cs" />
     <Compile Include="Assets\Scripts\Playables\EnemyMovement\EnemyMovementMixerBehaviour.cs" />
