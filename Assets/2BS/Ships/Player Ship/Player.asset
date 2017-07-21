@@ -9,6 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e880f168768d17443857c45697c6ea25, type: 3}
-  m_Name: New Ship Type Stats
+  m_Name: Player
   m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
   maxHP: 2

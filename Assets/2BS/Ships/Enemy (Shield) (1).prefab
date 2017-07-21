@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4048215812430866}
   - component: {fileID: 95268030375885696}
   - component: {fileID: 114961425383993170}
-  m_Layer: 0
+  - component: {fileID: 58439010714479996}
+  m_Layer: 9
   m_Name: Enemy (Shield) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,6 +142,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1394898503792632}
   m_Mesh: {fileID: 4300006, guid: 0092afb6bb90a1f43ae3a7c97fa5c5a8, type: 3}
+--- !u!58 &58439010714479996
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1262612310262514}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!95 &95268030375885696
 Animator:
   serializedVersion: 3

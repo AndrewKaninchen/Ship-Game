@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e880f168768d17443857c45697c6ea25, type: 3}
   m_Name: Normal
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1159786926999058, guid: 194fbf8cc6ded874293c09e7b310b8a3, type: 2}
-  maxHP: 25
+  prefab: {fileID: 1776206069136696, guid: 50e4756927ab90b4eb575206401fe585, type: 2}
+  maxHP: 2

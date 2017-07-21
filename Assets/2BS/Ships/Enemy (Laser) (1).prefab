@@ -54,7 +54,8 @@ GameObject:
   - component: {fileID: 4566757495067096}
   - component: {fileID: 95892103524566534}
   - component: {fileID: 114224353313949446}
-  m_Layer: 0
+  - component: {fileID: 58197843630577282}
+  m_Layer: 9
   m_Name: Enemy (Laser) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,6 +444,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1682431383533476}
   m_Mesh: {fileID: 4300014, guid: 0092afb6bb90a1f43ae3a7c97fa5c5a8, type: 3}
+--- !u!58 &58197843630577282
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1211375678138686}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!95 &95892103524566534
 Animator:
   serializedVersion: 3

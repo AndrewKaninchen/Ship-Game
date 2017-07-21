@@ -36,9 +36,9 @@ public class LaserWeapon : Weapon
 		lineRenderer.enabled = false;
 
 		//Se não fizer isso os gizmos da Unity bugam. Vai entender.
-		lineRenderer.transform.SetParent(null);
-		hitParticleSystem.transform.SetParent(null);
-		muzzleParticleSystem.transform.SetParent(null);
+		//lineRenderer.transform.SetParent(null);
+		//hitParticleSystem.transform.SetParent(null);
+		//muzzleParticleSystem.transform.SetParent(null);
 	}
 
 	private void Update()

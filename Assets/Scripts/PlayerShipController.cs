@@ -8,7 +8,7 @@ public class PlayerShipController : ShipController {
 
 	#region Components
 	private Rigidbody2D rb;
-	private SpriteRenderer sr;
+	private Animator anim;
 	#endregion
 
 	#region Fields
@@ -47,7 +47,7 @@ public class PlayerShipController : ShipController {
 	{
 		base.Start();
 		if (rb == null) rb = GetComponent<Rigidbody2D>();
-		if (sr == null) sr = GetComponent<SpriteRenderer>();
+		if (anim == null) anim = GetComponentInChildren<Animator>();
 	}
 	
 	private void Update ()
@@ -95,6 +95,8 @@ public class PlayerShipController : ShipController {
 	{
 		if(!dashing)
 			rb.velocity = inputDir * moveSpeed;
+
+		anim.SetFloat("Horizontal Speed", inputHorizontal, .1f, Time.fixedDeltaTime);
 	}
 
 	private IEnumerator WaitForDash(KeyCode code)
@@ -114,6 +116,11 @@ public class PlayerShipController : ShipController {
 	{
 		dashing = true;
 
+		if(direction == Vector2.right)
+			anim.SetTrigger("Roll Right");
+		if (direction == Vector2.left)
+			anim.SetTrigger("Roll Left");
+		
 		rb.velocity = Vector2.zero;
 		rb.AddForce(direction * dashForce, ForceMode2D.Impulse);
 		rb.drag = dashLinearDrag;

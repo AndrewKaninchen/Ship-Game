@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e880f168768d17443857c45697c6ea25, type: 3}
   m_Name: Laser
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1159786926999058, guid: 194fbf8cc6ded874293c09e7b310b8a3, type: 2}
-  maxHP: 25
+  prefab: {fileID: 1211375678138686, guid: 194fbf8cc6ded874293c09e7b310b8a3, type: 2}
+  maxHP: 3
