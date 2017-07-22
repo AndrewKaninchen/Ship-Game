@@ -103,7 +103,11 @@ MonoBehaviour:
   m_Name: EnemyMovementClip
   m_EditorClassIdentifier: 
   template:
-    path: {fileID: 0}
+    startingPosition: {x: 0, y: 0, z: 0}
+    endingPosition: {x: 0, y: 0, z: 0}
+    pathMode: 0
+    velocityMode: 0
+    splinePath: {fileID: 0}
     positionOverTime:
       serializedVersion: 2
       m_Curve:
@@ -666,7 +670,11 @@ MonoBehaviour:
   m_Name: EnemyMovementClip
   m_EditorClassIdentifier: 
   template:
-    path: {fileID: 0}
+    startingPosition: {x: 0, y: 0, z: 0}
+    endingPosition: {x: 0, y: 0, z: 0}
+    pathMode: 0
+    velocityMode: 0
+    splinePath: {fileID: 0}
     positionOverTime:
       serializedVersion: 2
       m_Curve:
@@ -810,7 +818,11 @@ MonoBehaviour:
   m_Name: EnemyMovementClip
   m_EditorClassIdentifier: 
   template:
-    path: {fileID: 0}
+    startingPosition: {x: 0, y: 0, z: 0}
+    endingPosition: {x: 0, y: 0, z: 0}
+    pathMode: 0
+    velocityMode: 0
+    splinePath: {fileID: 0}
     positionOverTime:
       serializedVersion: 2
       m_Curve:
@@ -1081,7 +1093,11 @@ MonoBehaviour:
   m_Name: EnemyMovementClip(Clone)
   m_EditorClassIdentifier: 
   template:
-    path: {fileID: 0}
+    startingPosition: {x: 0, y: 0, z: 0}
+    endingPosition: {x: 0, y: 0, z: 0}
+    pathMode: 0
+    velocityMode: 0
+    splinePath: {fileID: 0}
     positionOverTime:
       serializedVersion: 2
       m_Curve:
@@ -1240,7 +1256,11 @@ MonoBehaviour:
   m_Name: EnemyMovementClip
   m_EditorClassIdentifier: 
   template:
-    path: {fileID: 0}
+    startingPosition: {x: 0, y: 0, z: 0}
+    endingPosition: {x: 0, y: 0, z: 0}
+    pathMode: 0
+    velocityMode: 0
+    splinePath: {fileID: 0}
     positionOverTime:
       serializedVersion: 2
       m_Curve:
@@ -1302,7 +1322,11 @@ MonoBehaviour:
   m_Name: EnemyMovementClip
   m_EditorClassIdentifier: 
   template:
-    path: {fileID: 0}
+    startingPosition: {x: 0, y: 0, z: 0}
+    endingPosition: {x: 0, y: 0, z: 0}
+    pathMode: 0
+    velocityMode: 0
+    splinePath: {fileID: 0}
     positionOverTime:
       serializedVersion: 2
       m_Curve:
