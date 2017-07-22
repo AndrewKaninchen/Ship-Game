@@ -176,6 +176,7 @@
     <Compile Include="Assets\Scripts\Editor\WeaponEditor.cs" />
     <Compile Include="Assets\Scripts\Playables\EnemyControl\Editor\EnemyControlDrawer.cs" />
     <Compile Include="Assets\Scripts\Playables\EnemyLifetime\Editor\EnemyLifetimeDrawer.cs" />
+    <Compile Include="Assets\Scripts\Playables\EnemyMovement\Editor\EnemyMovementClipEditor.cs" />
     <Compile Include="Assets\Scripts\Playables\EnemyMovement\Editor\EnemyMovementDrawer.cs" />
     <Compile Include="Assets\Scripts\Spline Editor\Editor\BezierCurveInspector.cs" />
     <Compile Include="Assets\Scripts\Spline Editor\Editor\BezierSplineInspector.cs" />

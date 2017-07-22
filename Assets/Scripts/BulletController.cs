@@ -35,7 +35,7 @@ public class BulletController : MonoBehaviour
 		ShipController hit = collision.gameObject.GetComponent<ShipController>();
 		if (hit != null)
 		{
-			Debug.Log("Hit " + hit);
+			//Debug.Log("Hit " + hit);
 			hit.Damage(stats.damage);
 			Explode();
 		}

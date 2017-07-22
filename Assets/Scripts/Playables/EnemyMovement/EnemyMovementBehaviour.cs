@@ -5,12 +5,30 @@ using UnityEngine.Timeline;
 
 [Serializable]
 public class EnemyMovementBehaviour : PlayableBehaviour
-{
-    public BezierSpline path;
-    public AnimationCurve positionOverTime = AnimationCurve.Linear(0, 0, 1, 1);
+{	
+	public enum PathMode
+	{
+		Spline,
+		Linear
+	}
 
-    public override void OnGraphStart (Playable playable)
-    {
-        
-    }
+	public enum VelocityMode
+	{
+		Curve,
+		Linear
+	}
+
+	
+	public Vector3 startingPosition, endingPosition;
+
+	[Tooltip("The type of path the entity follow along this clip.")]
+	public PathMode pathMode;
+
+	[Tooltip("The type of velocity the entity will have along this clip.")]
+	public VelocityMode velocityMode;
+
+	public BezierSpline splinePath;
+
+
+	public AnimationCurve positionOverTime = AnimationCurve.Linear(0, 0, 1, 1);
 }

@@ -9,7 +9,7 @@ public class EnemyMovementClip : PlayableAsset, ITimelineClipAsset
     public EnemyMovementBehaviour template = new EnemyMovementBehaviour ();
     public ExposedReference<BezierSpline> path;
 
-    public ClipCaps clipCaps
+	public ClipCaps clipCaps
     {
         get { return ClipCaps.None; }
     }
@@ -18,7 +18,7 @@ public class EnemyMovementClip : PlayableAsset, ITimelineClipAsset
     {
         var playable = ScriptPlayable<EnemyMovementBehaviour>.Create (graph, template);
         EnemyMovementBehaviour clone = playable.GetBehaviour ();
-        clone.path = path.Resolve (graph.GetResolver ());
+        clone.splinePath = path.Resolve (graph.GetResolver ());
         return playable;
     }
 }

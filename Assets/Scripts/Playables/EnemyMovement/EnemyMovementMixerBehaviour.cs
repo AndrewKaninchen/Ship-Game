@@ -24,7 +24,7 @@ public class EnemyMovementMixerBehaviour : PlayableBehaviour
             if(inputWeight == 1)
 			{
 				var normalizedTime = (float) (inputPlayable.GetTime() / inputPlayable.GetDuration());
-				var position = input.path.GetPoint(input.positionOverTime.Evaluate(normalizedTime));
+				var position = input.splinePath.GetPoint(input.positionOverTime.Evaluate(normalizedTime));
 				trackBinding.transform.position = position;
 			}      
         }

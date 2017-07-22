@@ -21,7 +21,7 @@ public abstract class ShipController : MonoBehaviour
 	protected virtual void Start()
 	{
 		currentStats = new CurrentStats(baseStats.maxHP);
-		Debug.Log(name + " HP: " + currentStats.HP);
+		//Debug.Log(name + " HP: " + currentStats.HP);
 	}
 
 	public void Damage(float damage)
