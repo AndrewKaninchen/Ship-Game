@@ -39,13 +39,15 @@ public class MachineGunWeapon : Weapon
 		bulletPrefabController.friendly = friendly;
 		bulletTemplate.SetActive(false);
 	}
+
+	private void Update()
+	{
+		cooldown -= Time.deltaTime;
+	}
 	public override void Shoot()
 	{
 		if (cooldown > 0)
-		{
-			cooldown -= Time.deltaTime;
 			return;
-		}
 
 		cooldown = cooldownSize;
 

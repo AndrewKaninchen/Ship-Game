@@ -24,7 +24,15 @@ public class EnemyMovementMixerBehaviour : PlayableBehaviour
             if(inputWeight == 1)
 			{
 				var normalizedTime = (float) (inputPlayable.GetTime() / inputPlayable.GetDuration());
-				var position = input.splinePath.GetPoint(input.positionOverTime.Evaluate(normalizedTime));
+				Vector3 position = new Vector3();
+				if(input.pathMode == EnemyMovementBehaviour.PathMode.Linear)
+				{
+					position = Vector3.Lerp(input.startingPosition, input.endingPosition, input.positionOverTime.Evaluate(normalizedTime));
+				}
+				else if(input.pathMode == EnemyMovementBehaviour.PathMode.Spline)
+				{
+					position = input.splinePath.GetPoint(input.positionOverTime.Evaluate(normalizedTime));
+				}				
 				trackBinding.transform.position = position;
 			}      
         }
