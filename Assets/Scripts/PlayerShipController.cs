@@ -42,27 +42,27 @@ public class PlayerShipController : ShipController {
 
 	[SerializeField]
 	private Weapon weapon;
-	
+
+	public Vector2 Bordering { get; set; }
+
 	protected override void Start ()
 	{
 		base.Start();
 		if (rb == null) rb = GetComponent<Rigidbody2D>();
 		if (anim == null) anim = GetComponentInChildren<Animator>();
 	}
-	
+
 	private void Update ()
 	{
 		inputHorizontal = Input.GetAxis("Horizontal");
 		inputVertical = Input.GetAxis("Vertical");
-
-		inputDir = Vector2.ClampMagnitude(new Vector2(inputHorizontal, inputVertical), 1f);
+		inputDir = new Vector2(inputHorizontal, inputVertical);
 		shooting = false;
 
 		if (Input.GetButton("Fire1"))
 		{
 			weapon.Shoot();
 			shooting = true;
-			//rb.velocity = Vector2.zero;
 		}
 
 		if (!dashing && !waitingForDash)
@@ -94,7 +94,7 @@ public class PlayerShipController : ShipController {
 	private void FixedUpdate()
 	{
 		if(!dashing)
-			rb.velocity = inputDir * moveSpeed;
+			rb.velocity = Vector2.ClampMagnitude(inputDir * moveSpeed, moveSpeed);
 
 		anim.SetFloat("Horizontal Speed", inputHorizontal, .1f, Time.fixedDeltaTime);
 	}
