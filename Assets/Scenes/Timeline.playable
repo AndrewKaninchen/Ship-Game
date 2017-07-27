@@ -91,44 +91,6 @@ MonoBehaviour:
   template:
     action: 1
     prefab: {fileID: 0}
---- !u!114 &114111940339256390
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43518c4de9206f7458cb53d47e662b73, type: 3}
-  m_Name: EnemyMovementClip
-  m_EditorClassIdentifier: 
-  template:
-    startingPosition: {x: 0, y: 0, z: 0}
-    endingPosition: {x: 0, y: 0, z: 0}
-    pathMode: 0
-    velocityMode: 0
-    splinePath: {fileID: 0}
-    positionOverTime:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: -1
-        tangentMode: 69
-      - serializedVersion: 2
-        time: 1
-        value: 0
-        inSlope: -1
-        outSlope: 0
-        tangentMode: 69
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-  path:
-    exposedName: 60afbee40c28bf64b818dc8d58d7ad7a
-    defaultValue: {fileID: 0}
 --- !u!114 &114113317120491084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -932,7 +894,7 @@ MonoBehaviour:
     m_DisplayName: EnemyMovementClip
   - m_Start: 7.35
     m_ClipIn: 0
-    m_Asset: {fileID: 114111940339256390}
+    m_Asset: {fileID: 114847663917808876}
     m_UnderlyingAsset: {fileID: 114816784148843480}
     m_Duration: 1.85
     m_ParentID: 0
@@ -988,7 +950,7 @@ MonoBehaviour:
     m_BlendOutCurveMode: 0
     m_ExposedParameterNames: []
     m_AnimationCurves: {fileID: 0}
-    m_ID: -1018530726
+    m_ID: -1128215797
     m_Recordable: 0
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
@@ -1081,71 +1043,6 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: EnemyLifetimeClip
-  - m_Start: 9.2
-    m_ClipIn: 0
-    m_Asset: {fileID: 114667601421367454}
-    m_UnderlyingAsset: {fileID: 114667601421367454}
-    m_Duration: 5
-    m_ParentID: 0
-    m_TimeScale: 1
-    m_BlendCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_ParentTrack: {fileID: 114550086858453030}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: 0
-    m_BlendOutDuration: 0
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_ID: -1639877590
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0
-    m_PreExtrapolationTime: 0
-    m_DisplayName: EnemyLifetimeClip
 --- !u!114 &114580804618220192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1196,19 +1093,6 @@ MonoBehaviour:
   path:
     exposedName: 60be60b145f383448b26d42a4ca92d42
     defaultValue: {fileID: 0}
---- !u!114 &114667601421367454
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 468fcb754ce03394c8f5e0afec24637b, type: 3}
-  m_Name: EnemyLifetimeClip
-  m_EditorClassIdentifier: 
-  template:
-    template: {fileID: 0}
 --- !u!114 &114696244457953652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1374,6 +1258,44 @@ MonoBehaviour:
   template:
     action: 1
     prefab: {fileID: 0}
+--- !u!114 &114847663917808876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43518c4de9206f7458cb53d47e662b73, type: 3}
+  m_Name: EnemyMovementClip
+  m_EditorClassIdentifier: 
+  template:
+    startingPosition: {x: -13.166013, y: -3.1575284, z: 0}
+    endingPosition: {x: 13.542173, y: -2.2005434, z: 0}
+    pathMode: 1
+    velocityMode: 0
+    splinePath: {fileID: 0}
+    positionOverTime:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -1
+        tangentMode: 69
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: -1
+        outSlope: 1
+        tangentMode: 69
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+  path:
+    exposedName: 87f6404c32e857e49b1a8535780c5e6e
+    defaultValue: {fileID: 0}
 --- !u!114 &114865064501051626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,9 +1322,9 @@ MonoBehaviour:
   m_Name: EnemyMovementClip
   m_EditorClassIdentifier: 
   template:
-    startingPosition: {x: 0, y: 0, z: 0}
-    endingPosition: {x: 0, y: 0, z: 0}
-    pathMode: 0
+    startingPosition: {x: -13.166013, y: -3.1575284, z: 0}
+    endingPosition: {x: 13.542173, y: -2.2005434, z: 0}
+    pathMode: 1
     velocityMode: 0
     splinePath: {fileID: 0}
     positionOverTime:

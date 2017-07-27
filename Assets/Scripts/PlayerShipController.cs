@@ -2,13 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerShipController : ShipController {
 
+	#region External Components
+	//public SpaceShooter.UI.HUD hud;
+	#endregion
+
 	#region Components
 	private Rigidbody2D rb;
 	private Animator anim;
+
+	[SerializeField]
+	private Weapon weapon;
 	#endregion
 
 	#region Fields
@@ -38,27 +46,38 @@ public class PlayerShipController : ShipController {
 		shooting = false;
 	private KeyCode waitingForDashKeyCode;
 	private Coroutine waitingForDashCoroutine;
+
+	
 	#endregion
 
-	[SerializeField]
-	private Weapon weapon;
-
-	public Vector2 Bordering { get; set; }
+	#region Events
+	public Action onDamage;
+	public Action onHeal;
+	#endregion
 
 	protected override void Start ()
 	{
 		base.Start();
 		if (rb == null) rb = GetComponent<Rigidbody2D>();
 		if (anim == null) anim = GetComponentInChildren<Animator>();
+
+		//hud.UpdateHealthStats(baseStats.maxHP, baseStats.maxHP);
 	}
 
 	private void Update ()
 	{
+		#region Cheats
+		if (Input.GetKeyDown(KeyCode.J))
+		{
+			Heal(1);
+		}
+		#endregion
+
 		inputHorizontal = Input.GetAxis("Horizontal");
 		inputVertical = Input.GetAxis("Vertical");
 		inputDir = new Vector2(inputHorizontal, inputVertical);
 		shooting = false;
-
+		
 		if (Input.GetButton("Fire1"))
 		{
 			weapon.Shoot();
@@ -87,8 +106,7 @@ public class PlayerShipController : ShipController {
 				StopCoroutine(waitingForDashCoroutine);
 				StartCoroutine(Dash(waitingForDashKeyCode == KeyCode.A ? Vector2.left : Vector2.right));
 			}
-		}
-		
+		}		
 	}
 
 	private void FixedUpdate()
@@ -133,12 +151,28 @@ public class PlayerShipController : ShipController {
 
 	public override void Die()
 	{
-		Debug.Log(name+": " + "I is dead");
+		base.Die();
+		Debug.Log("U Dead");
 	}
 
 	public void ChangeWeapon (GameObject weaponPrefab)
 	{
 		Destroy(weapon.gameObject);
 		weapon = Instantiate(weaponPrefab, transform).GetComponent<Weapon>();
+	}
+
+	public override void Damage(float damage)
+	{
+		base.Damage(damage);
+		//Debug.Log("Player damaged by " + damage + " points. Current HP = " + currentStats.HP);
+		onDamage();
+	}
+
+	public override void Heal(float heal)
+	{
+		base.Heal(heal);
+		//Debug.Log("Player healed by " + heal + " points. Current HP = " + currentStats.HP);
+		onHeal();
+
 	}
 }

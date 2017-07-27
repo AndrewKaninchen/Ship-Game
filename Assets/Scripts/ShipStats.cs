@@ -7,4 +7,5 @@ public class ShipStats : ScriptableObject
 {
 	public GameObject prefab;
 	public int maxHP;
+	public int xp;
 }

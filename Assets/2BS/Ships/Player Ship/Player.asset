@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
-  maxHP: 2
+  maxHP: 10
+  xp: 0

@@ -15,8 +15,8 @@ public abstract class ShipController : MonoBehaviour
 	}
 
 	[SerializeField]
-	private ShipStats baseStats;
-	private CurrentStats currentStats;
+	public ShipStats baseStats;
+	public CurrentStats currentStats;
 
 	protected virtual void Start()
 	{
@@ -24,7 +24,7 @@ public abstract class ShipController : MonoBehaviour
 		//Debug.Log(name + " HP: " + currentStats.HP);
 	}
 
-	public void Damage(float damage)
+	public virtual void Damage(float damage)
 	{
 		currentStats.HP -= damage;
 		if(currentStats.HP <= 0)
@@ -33,10 +33,13 @@ public abstract class ShipController : MonoBehaviour
 		}
 	}
 
-	public void Heal(float heal)
+	public virtual void Heal(float heal)
 	{
 		currentStats.HP = (int) Mathf.Clamp( (currentStats.HP + heal), 0f, baseStats.maxHP);
 	}
 
-	public abstract void Die();
+	public virtual void Die()
+	{
+		Destroy(gameObject);
+	}
 }

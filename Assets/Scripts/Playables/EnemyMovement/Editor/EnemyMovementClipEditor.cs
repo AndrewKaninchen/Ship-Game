@@ -11,13 +11,31 @@ public class EnemyMovementClipEditor : Editor {
 	SerializedProperty templateSO;
 	SerializedProperty pathMode;
 	SerializedProperty velocityMode;
+	SerializedProperty startingPosition;
+	SerializedProperty endingPosition;
 
-	public override void OnInspectorGUI()
+
+	private void OnEnable()
 	{
+		SceneView.onSceneGUIDelegate -= this.MySceneGUI;
+		SceneView.onSceneGUIDelegate += this.MySceneGUI;
+
 		clip = target as EnemyMovementClip;
 		templateSO = serializedObject.FindProperty("template");
 		behaviour = clip.template;
 
+		startingPosition = templateSO.FindPropertyRelative("startingPosition");
+		endingPosition = templateSO.FindPropertyRelative("endingPosition");
+
+	}
+
+	private void OnDisable()
+	{
+		SceneView.onSceneGUIDelegate -= this.MySceneGUI;
+	}
+
+	public override void OnInspectorGUI()
+	{		
 		#region Path
 		{
 			#region Draw Box
@@ -31,10 +49,8 @@ public class EnemyMovementClipEditor : Editor {
 			EditorGUILayout.PropertyField(pathMode);
 			if (pathMode.enumValueIndex == (int)EnemyMovementBehaviour.PathMode.Linear)
 			{
-				SerializedProperty sp = templateSO.FindPropertyRelative("startingPosition");
-				SerializedProperty ep = templateSO.FindPropertyRelative("endingPosition");
-				EditorGUILayout.PropertyField(sp);
-				EditorGUILayout.PropertyField(ep);
+				EditorGUILayout.PropertyField(startingPosition);
+				EditorGUILayout.PropertyField(endingPosition);				
 			}
 			else if (pathMode.enumValueIndex == (int)EnemyMovementBehaviour.PathMode.Spline)
 			{
@@ -74,15 +90,19 @@ public class EnemyMovementClipEditor : Editor {
 		#endregion
 
 		serializedObject.ApplyModifiedProperties();
+	}
 
-		//if (pathMode.enumValueIndex == (int)EnemyMovementBehaviour.PathMode.Linear)
-		//{
-		//	Handles.color = Color.green;
-		//	Debug.Log("SP: " + behaviour.startingPosition);
-		//	Debug.Log("EP: " + behaviour.endingPosition);
-		//	behaviour.startingPosition = Handles.DoPositionHandle(behaviour.startingPosition, Quaternion.identity);
-		//	behaviour.endingPosition = Handles.DoPositionHandle(behaviour.endingPosition, Quaternion.identity);
-		//	Handles.DrawLine(behaviour.startingPosition, behaviour.endingPosition);
-		//}
+	private void MySceneGUI(SceneView sceneView)
+	{
+		if (pathMode.enumValueIndex == (int)EnemyMovementBehaviour.PathMode.Linear)
+		{
+			Handles.color = Color.green;
+			startingPosition.vector3Value = Handles.DoPositionHandle(startingPosition.vector3Value, Quaternion.identity);
+			endingPosition.vector3Value = Handles.DoPositionHandle(endingPosition.vector3Value, Quaternion.identity);
+			Handles.DrawLine(startingPosition.vector3Value, endingPosition.vector3Value);
+
+			serializedObject.ApplyModifiedProperties();
+				OnInspectorGUI();
+		}		
 	}
 }

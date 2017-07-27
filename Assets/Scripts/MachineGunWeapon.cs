@@ -34,7 +34,7 @@ public class MachineGunWeapon : Weapon
 	public void Start()
 	{
 		cooldown = 0;
-		bulletTemplate = Instantiate(bulletPrefab);
+		bulletTemplate = Instantiate(bulletPrefab, transform);
 		bulletPrefabController = bulletTemplate.GetComponent<BulletController>();
 		bulletPrefabController.friendly = friendly;
 		bulletTemplate.SetActive(false);

@@ -38,8 +38,8 @@ public class EnemyLifetimeMixerBehaviour : PlayableBehaviour
 			//If a clip is running
             if(inputWeight == 1)
 			{				
-				if (!instance && !hasSpawned)
-				{
+				if (!instance && inputPlayable.GetTime() < .2f)
+				{				
 					//Instantiate if there was no instance
 					instance = GameObject.Instantiate(input.template.prefab).GetComponent<EnemyShipController>();
 					hasSpawned = true;
