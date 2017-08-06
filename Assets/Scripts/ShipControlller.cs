@@ -26,8 +26,8 @@ public abstract class ShipController : MonoBehaviour
 
 	public virtual void Damage(float damage)
 	{
-		currentStats.HP -= damage;
-		if(currentStats.HP <= 0)
+		currentStats.HP = Mathf.Clamp(currentStats.HP - damage, 0f, baseStats.maxHP);
+		if(currentStats.HP == 0)
 		{
 			Die();
 		}

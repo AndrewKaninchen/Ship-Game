@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff107072cd2ff1648b49b8564c1faa00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownSize: 0.15
+  cooldownSize: 0.2
   bulletSpread: 30
   amountOfBullets: 3
   bulletPrefab: {fileID: 1398834363625468, guid: bde3137b23a918943a8c91be470de3fc,

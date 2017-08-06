@@ -72,7 +72,7 @@ public class LaserWeapon : Weapon
 			hitParticleSystem.transform.LookAt(transform);
 			hitParticleSystem.Emit((UnityEngine.Random.Range(3, 10)));
 
-			hit.transform.GetComponent<ShipController>().Damage(dps * Time.deltaTime);
+			hit.transform.GetComponent<ShipController>().Damage(friendly? dps * Time.deltaTime : dps);
 		}
 
 		else

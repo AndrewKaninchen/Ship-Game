@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85914551237a0b046bac620d3e51c86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dps: 10
+  dps: 1
   hitParticleSystem: {fileID: 198962569987875010}
   muzzleParticleSystem: {fileID: 198511556631732576}
   barrel: {fileID: 4152293023446872}

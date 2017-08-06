@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a5f38ace738491c43b4c2abf8c058789
-timeCreated: 1501450933
+guid: 7cedbe3b3e78c7146a0d232fba7fe69c
+timeCreated: 1501882120
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -159,8 +159,8 @@ ModelImporter:
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -193,10 +193,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

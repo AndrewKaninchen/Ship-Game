@@ -16,13 +16,14 @@ public class PlayerShipController : ShipController {
 	private Animator anim;
 
 	[SerializeField]
-	private Weapon weapon;
+	private Weapon[] weapons;
 	#endregion
 
 	#region Fields
 	[SerializeField]
 	private float
-		moveSpeed;
+		moveSpeed,
+		invencibilityTime;
 	[SerializeField]
 	[Header("Dash Parameters")]
 	private float
@@ -43,7 +44,8 @@ public class PlayerShipController : ShipController {
 	private bool
 		waitingForDash = false,
 		dashing = false,
-		shooting = false;
+		shooting = false,
+		invencible = false;
 	private KeyCode waitingForDashKeyCode;
 	private Coroutine waitingForDashCoroutine;
 
@@ -80,7 +82,8 @@ public class PlayerShipController : ShipController {
 		
 		if (Input.GetButton("Fire1"))
 		{
-			weapon.Shoot();
+			foreach (var weapon in weapons) 
+				weapon.Shoot();
 			shooting = true;
 		}
 
@@ -157,15 +160,34 @@ public class PlayerShipController : ShipController {
 
 	public void ChangeWeapon (GameObject weaponPrefab)
 	{
-		Destroy(weapon.gameObject);
-		weapon = Instantiate(weaponPrefab, transform).GetComponent<Weapon>();
+		//Destroy(weapon.gameObject);
+		//weapon = Instantiate(weaponPrefab, transform).GetComponent<Weapon>();
 	}
 
 	public override void Damage(float damage)
 	{
+		if (invencible)
+			return;
 		base.Damage(damage);
-		//Debug.Log("Player damaged by " + damage + " points. Current HP = " + currentStats.HP);
 		onDamage();
+		//Debug.Log("Player damaged by " + damage + " points. Current HP = " + currentStats.HP);
+		StartCoroutine(TurnInvencible(invencibilityTime));
+	}
+
+	private IEnumerator TurnInvencible(float time)
+	{
+		invencible = true;		
+		yield return new WaitForSeconds(time);
+		invencible = false;
+	}
+
+	private void OnDrawGizmos() 
+	{
+		if (invencible) 
+		{
+			Gizmos.color = new Color(1f, 0f, 1f);
+			Gizmos.DrawWireSphere(transform.position, 1f);
+		}
 	}
 
 	public override void Heal(float heal)

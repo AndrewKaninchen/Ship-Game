@@ -57,3 +57,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1398834363625468, guid: bde3137b23a918943a8c91be470de3fc,
     type: 2}
   barrel: {fileID: 4420454292280242}
+  friendly: 0
