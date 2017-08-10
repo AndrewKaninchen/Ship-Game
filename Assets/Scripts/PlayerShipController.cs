@@ -4,8 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+public static partial class GameManager 
+{
+	public static PlayerShipController playerShip;
+}
+
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerShipController : ShipController {
+public class PlayerShipController : ShipController <PlayerShipStats> 
+{
 
 	#region External Components
 	//public SpaceShooter.UI.HUD hud;
@@ -22,17 +28,17 @@ public class PlayerShipController : ShipController {
 	#region Fields
 	[SerializeField]
 	private float
-		moveSpeed,
-		invencibilityTime;
+		moveSpeed = 0,
+		invencibilityTime = 0;		
 	[SerializeField]
 	[Header("Dash Parameters")]
 	private float
 		dashForce;
 	[SerializeField]
 	private float
-		dashLinearDrag,
-		dashDuration,
-		dashDoublePressSpeed;
+		dashLinearDrag = 0,
+		dashDuration = 0,
+		dashDoublePressSpeed = 0;
 	#endregion
 
 	#region Variables
@@ -40,26 +46,30 @@ public class PlayerShipController : ShipController {
 
 	private float
 		inputHorizontal,
-		inputVertical;
+		inputVertical,
+		currentExperience;
 	private bool
 		waitingForDash = false,
 		dashing = false,
-		shooting = false,
 		invencible = false;
 	private KeyCode waitingForDashKeyCode;
 	private Coroutine waitingForDashCoroutine;
 
-	
+
 	#endregion
 
 	#region Events
+	public Action onDie;
 	public Action onDamage;
 	public Action onHeal;
+	public Action<float>  onGainExperience;
 	#endregion
 
 	protected override void Start ()
 	{
 		base.Start();
+		GameManager.playerShip = this;
+
 		if (rb == null) rb = GetComponent<Rigidbody2D>();
 		if (anim == null) anim = GetComponentInChildren<Animator>();
 
@@ -78,13 +88,11 @@ public class PlayerShipController : ShipController {
 		inputHorizontal = Input.GetAxis("Horizontal");
 		inputVertical = Input.GetAxis("Vertical");
 		inputDir = new Vector2(inputHorizontal, inputVertical);
-		shooting = false;
 		
 		if (Input.GetButton("Fire1"))
 		{
 			foreach (var weapon in weapons) 
 				weapon.Shoot();
-			shooting = true;
 		}
 
 		if (!dashing && !waitingForDash)
@@ -196,5 +204,12 @@ public class PlayerShipController : ShipController {
 		//Debug.Log("Player healed by " + heal + " points. Current HP = " + currentStats.HP);
 		onHeal();
 
+	}
+
+	public void AddExperience(float val) 
+	{		
+		currentExperience = Mathf.Clamp(currentExperience + val, 0, baseStats.maxXP);
+		Debug.Log("XP = " + currentExperience);
+		onGainExperience(val);
 	}
 }

@@ -157,6 +157,7 @@
     <Compile Include="Assets\Scripts\Playables\EnemyMovement\EnemyMovementMixerBehaviour.cs" />
     <Compile Include="Assets\Scripts\Playables\EnemyMovement\EnemyMovementTrack.cs" />
     <Compile Include="Assets\Scripts\PlayerShipController.cs" />
+    <Compile Include="Assets\Scripts\PlayerShipStats.cs" />
     <Compile Include="Assets\Scripts\ShipControlller.cs" />
     <Compile Include="Assets\Scripts\ShipStats.cs" />
     <Compile Include="Assets\Scripts\Spline Editor\Bezier.cs" />

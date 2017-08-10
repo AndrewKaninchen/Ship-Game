@@ -9,7 +9,7 @@ public enum EnemyAction
 }
 
 [System.Serializable]
-public class EnemyShipController : ShipController
+public class EnemyShipController : ShipController <ShipStats>
 {
 	[SerializeField]
 	private GameObject explosionPrefab;
@@ -41,7 +41,9 @@ public class EnemyShipController : ShipController
 	{
 		var e = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 		col.enabled = false;
-		
+
+		GameManager.playerShip.AddExperience(baseStats.xp);		
+
 		Destroy(gameObject, .1f);
 		Destroy(e, 1f);
 	}

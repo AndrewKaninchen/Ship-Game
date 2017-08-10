@@ -13,13 +13,15 @@ namespace SpaceShooter.UI
 		private int maxSP = 0;
 		private int currentSP = 0;
 
-		public PlayerShipController playerShip;
+		private float maxXP = 0;
 
 		public GameObject healthBar;
 		public GameObject shieldBar;
 
 		public GameObject healthBlockPrefab;
 		public GameObject shieldBlockPrefab;
+
+		public Image experienceBarMask;
 
 		public Color healthBarColor, shieldBarColor;
 
@@ -39,11 +41,20 @@ namespace SpaceShooter.UI
 			//	Destroy(shieldBlocks[i]);
 			//}
 
-			UpdateHealthStats(playerShip.baseStats.maxHP, playerShip.baseStats.maxHP);
+			UpdateHealthStats(GameManager.playerShip.baseStats.maxHP, GameManager.playerShip.baseStats.maxHP);
 
-			playerShip.onDamage += () => UpdateHealthStats(playerShip.baseStats.maxHP, (int)playerShip.currentStats.HP);
-			playerShip.onHeal += () => UpdateHealthStats(playerShip.baseStats.maxHP, (int)playerShip.currentStats.HP);
+			GameManager.playerShip.onDamage += () => UpdateHealthStats(GameManager.playerShip.baseStats.maxHP, (int)GameManager.playerShip.currentStats.HP);
+			GameManager.playerShip.onHeal += () => UpdateHealthStats(GameManager.playerShip.baseStats.maxHP, (int)GameManager.playerShip.currentStats.HP);
+			GameManager.playerShip.onGainExperience += x => UpdateExperienceBar(x);
+
+			maxXP = GameManager.playerShip.baseStats.maxXP;
+			experienceBarMask.fillAmount = 0;
 		}
+
+		public void UpdateExperienceBar (float newXP)
+		{
+			experienceBarMask.fillAmount += newXP / maxXP % 3 ;
+		} 
 
 		public void UpdateHealthStats(int newMaxHP, int newHP)
 		{
@@ -130,7 +141,7 @@ namespace SpaceShooter.UI
 		private void SetBlockDamaged(GameObject block)
 		{
 			var i = block.GetComponent<Image>();
-			i.color = new Color(i.color.r, i.color.g, i.color.b, .5f);
+			i.color = new Color(i.color.r, i.color.g, i.color.b, .1f);
 		}
 
 		private void SetBlockUnDamaged(GameObject block)

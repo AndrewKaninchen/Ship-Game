@@ -9,16 +9,16 @@ public class EnemyLifetimeMixerBehaviour : PlayableBehaviour
 	public PlayableDirector director;
 	private EnemyShipController instance;
 
-	private bool hasSpawned = false;
+	//private bool hasSpawned = false;
 
 	public override void OnBehaviourPlay(Playable playable, FrameData info)
 	{
-		hasSpawned = false;
+		//hasSpawned = false;
 	}
 
 	public override void OnBehaviourPause(Playable playable, FrameData info)
 	{
-		hasSpawned = false;
+		//hasSpawned = false;
 	}
 
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
@@ -42,7 +42,7 @@ public class EnemyLifetimeMixerBehaviour : PlayableBehaviour
 				{				
 					//Instantiate if there was no instance
 					instance = GameObject.Instantiate(input.template.prefab).GetComponent<EnemyShipController>();
-					hasSpawned = true;
+					//hasSpawned = true;
 
 					//Bind new instance to all tracks in the same group as this one
 					foreach (TrackAsset t in track.GetGroup().GetChildTracks())

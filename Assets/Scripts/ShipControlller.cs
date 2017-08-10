@@ -2,7 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ShipController : MonoBehaviour
+public abstract class ShipController : MonoBehaviour 
+{	
+	protected virtual void Start() {}
+
+	public virtual void Damage(float damage) {}
+
+	public virtual void Heal(float heal) {}
+
+	public virtual void Die() {}
+}
+
+public abstract class ShipController <Stats> : ShipController where Stats : ShipStats
 {
 	public struct CurrentStats
 	{
@@ -15,16 +26,16 @@ public abstract class ShipController : MonoBehaviour
 	}
 
 	[SerializeField]
-	public ShipStats baseStats;
+	public Stats baseStats;
 	public CurrentStats currentStats;
 
-	protected virtual void Start()
-	{
+	protected override void Start()
+	{		
 		currentStats = new CurrentStats(baseStats.maxHP);
 		//Debug.Log(name + " HP: " + currentStats.HP);
 	}
 
-	public virtual void Damage(float damage)
+	public override void Damage(float damage)
 	{
 		currentStats.HP = Mathf.Clamp(currentStats.HP - damage, 0f, baseStats.maxHP);
 		if(currentStats.HP == 0)
@@ -33,12 +44,12 @@ public abstract class ShipController : MonoBehaviour
 		}
 	}
 
-	public virtual void Heal(float heal)
+	public override void Heal(float heal)
 	{
 		currentStats.HP = (int) Mathf.Clamp( (currentStats.HP + heal), 0f, baseStats.maxHP);
 	}
 
-	public virtual void Die()
+	public override void Die()
 	{
 		Destroy(gameObject);
 	}

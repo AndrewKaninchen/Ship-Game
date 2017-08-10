@@ -7,7 +7,7 @@ using UnityEditor;
 public class EnemyMovementClipEditor : Editor {
 
 	EnemyMovementClip clip;
-	EnemyMovementBehaviour behaviour;
+	//EnemyMovementBehaviour behaviour;
 	SerializedProperty templateSO;
 	SerializedProperty pathMode;
 	SerializedProperty velocityMode;
@@ -22,7 +22,7 @@ public class EnemyMovementClipEditor : Editor {
 
 		clip = target as EnemyMovementClip;
 		templateSO = serializedObject.FindProperty("template");
-		behaviour = clip.template;
+		//behaviour = clip.template;
 
 		startingPosition = templateSO.FindPropertyRelative("startingPosition");
 		endingPosition = templateSO.FindPropertyRelative("endingPosition");

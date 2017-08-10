@@ -7,7 +7,7 @@ public class BulletController : MonoBehaviour
 {
 	#region Components
 	[SerializeField]
-	private Rigidbody2D rigidbody;
+	private Rigidbody2D rb;
 	#endregion
 
 	#region Fields
@@ -20,8 +20,8 @@ public class BulletController : MonoBehaviour
 	public void Start ()
 	{
 		Destroy(gameObject, 5f);
-		if (rigidbody == null) rigidbody = GetComponent<Rigidbody2D>();
-		rigidbody.velocity = transform.up * stats.speed;
+		if (rb == null) rb = GetComponent<Rigidbody2D>();
+		rb.velocity = transform.up * stats.speed;
 
 		if(friendly)
 			gameObject.layer = LayerMask.NameToLayer("PlayerBullet");

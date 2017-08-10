@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1776206069136696, guid: 50e4756927ab90b4eb575206401fe585, type: 2}
   maxHP: 2
+  xp: 5
