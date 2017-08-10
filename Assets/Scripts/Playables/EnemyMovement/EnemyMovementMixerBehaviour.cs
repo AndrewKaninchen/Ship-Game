@@ -32,6 +32,7 @@ public class EnemyMovementMixerBehaviour : PlayableBehaviour
 				else if(input.pathMode == EnemyMovementBehaviour.PathMode.Spline)
 				{
 					position = input.splinePath.GetPoint(input.positionOverTime.Evaluate(normalizedTime));
+					position += input.offset;
 				}				
 				trackBinding.transform.position = position;
 			}      

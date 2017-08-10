@@ -12,8 +12,7 @@ public class EnemyControlDrawer : PropertyDrawer
 
     public override void OnGUI (Rect position, SerializedProperty property, GUIContent label)
     {		
-        SerializedProperty actionProp = property.FindPropertyRelative("action");
-		SerializedProperty prefabProp = property.FindPropertyRelative("prefab");
+        SerializedProperty actionProp = property.FindPropertyRelative("action");		
 
 		//Rect singleFieldRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
         EditorGUILayout.PropertyField(actionProp);

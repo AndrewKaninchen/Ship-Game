@@ -15,40 +15,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae525411f71d68843a167d624888de6c, type: 2}
   m_Vals:
   - timeInFrames: 1
-    timeAreaShownRange: {x: -5, y: 5}
+    timeAreaShownRange: {x: -0.086132646, y: 9.913867}
     m_Keys:
     - {fileID: 114113317120491084, guid: ae525411f71d68843a167d624888de6c, type: 2}
     - {fileID: 114996056651513100, guid: ae525411f71d68843a167d624888de6c, type: 2}
-    - {fileID: 114247125650957584, guid: ae525411f71d68843a167d624888de6c, type: 2}
     - {fileID: 114148567239354952, guid: ae525411f71d68843a167d624888de6c, type: 2}
     - {fileID: 114345593794803844, guid: ae525411f71d68843a167d624888de6c, type: 2}
-    - {fileID: 114550086858453030, guid: ae525411f71d68843a167d624888de6c, type: 2}
     - {fileID: 114535892498148514, guid: ae525411f71d68843a167d624888de6c, type: 2}
     - {fileID: 114268849599299844, guid: ae525411f71d68843a167d624888de6c, type: 2}
-    - {fileID: 114156282378604734, guid: ae525411f71d68843a167d624888de6c, type: 2}
-    - {fileID: 114354252294781344, guid: ae525411f71d68843a167d624888de6c, type: 2}
     - {fileID: 114696244457953652, guid: ae525411f71d68843a167d624888de6c, type: 2}
     - {fileID: 114930636117366166, guid: ae525411f71d68843a167d624888de6c, type: 2}
     m_Vals:
-    - collapsed: 1
+    - collapsed: 0
+      showInlineCurves: 0
+    - collapsed: 0
+      showInlineCurves: 0
+    - collapsed: 0
       showInlineCurves: 0
     - collapsed: 1
       showInlineCurves: 0
-    - collapsed: 1
+    - collapsed: 0
       showInlineCurves: 0
-    - collapsed: 1
-      showInlineCurves: 0
-    - collapsed: 1
-      showInlineCurves: 0
-    - collapsed: 1
-      showInlineCurves: 0
-    - collapsed: 1
-      showInlineCurves: 0
-    - collapsed: 1
-      showInlineCurves: 0
-    - collapsed: 1
-      showInlineCurves: 0
-    - collapsed: 1
+    - collapsed: 0
       showInlineCurves: 0
     - collapsed: 1
       showInlineCurves: 0

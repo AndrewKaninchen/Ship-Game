@@ -28,6 +28,7 @@ public class EnemyMovementBehaviour : PlayableBehaviour
 	public VelocityMode velocityMode;
 
 	public BezierSpline splinePath;
+	public Vector3 offset;
 
 
 	public AnimationCurve positionOverTime = AnimationCurve.Linear(0, 0, 1, 1);

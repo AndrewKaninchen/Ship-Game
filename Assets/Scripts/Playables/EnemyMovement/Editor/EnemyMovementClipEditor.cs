@@ -55,7 +55,9 @@ public class EnemyMovementClipEditor : Editor {
 			else if (pathMode.enumValueIndex == (int)EnemyMovementBehaviour.PathMode.Spline)
 			{
 				SerializedProperty path = serializedObject.FindProperty("path");
+				SerializedProperty offset = templateSO.FindPropertyRelative("offset");
 				EditorGUILayout.PropertyField(path);
+				EditorGUILayout.PropertyField(offset);
 			}
 
 			EditorGUILayout.EndVertical();
